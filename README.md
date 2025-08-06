@@ -1,118 +1,181 @@
-EchoNote
-Overview
-EchoNote is an AI-powered productivity app that transforms speech and scanned text into organized, editable notes. Users can record and transcribe audio, edit notes, generate AI summaries, translate content, and scan text using the camera. A built-in word lookup feature lets users tap on any word in a note to instantly see its meaning, making EchoNote a powerful tool for students, professionals, and multilingual users.
+# **EchoNote**
 
-App Evaluation
-Category: Productivity / Utilities
+---
 
-Mobile: Leverages microphone for speech-to-text, camera for OCR, and AI for summarization/translation.
+## **Overview**
 
-Story: A user records a lecture or meeting, edits the transcription, summarizes it into bullet points, translates it into another language, and can tap any word to see its meaning.
+### **Description**
 
-Market: Students, journalists, researchers, professionals, and language learners.
+**EchoNote** is an **AI-powered productivity app** that transforms spoken words into organized, editable, and actionable notes. Users can **record speech**, instantly **transcribe it to text**, **edit** the transcription, **summarize** it with **AI**, **translate** it into different languages, **scan text** using their **camera**, or **tap on individual words** to instantly see their meanings and definitions. All **notes and edits** are stored for easy access, search, and sharing, making it perfect for **students, professionals**, and **anyone** who needs clear and concise records of conversations, lectures, or meetings.
 
-Habit: Frequent use during classes, meetings, and study sessions.
+---
 
-Scope:
+## **Product Spec**
 
-V1: Recording, transcription, editing, saving notes, word meaning lookup.
+### **1. User Stories**
 
-V2: AI summarization and translation.
+**Required Must-have Stories**
 
-V3: OCR scanning, tagging, and offline dictionary.
+- **User can record audio** and see **live transcription**.  
+- **User can edit** and **save** the transcription to a **list of notes**.  
+- **User can tap a note** to open a **detailed view**.  
+- **User can generate AI summaries** of a note.  
+- **User can scan text** using the **camera** and save it.  
+- **User can translate notes** into another language.  
+- **User can tap a word** in any note to see its **meaning/definition** in a popup or bottom sheet.  
+- **All saved notes** appear in the home screen’s **table view**.  
 
-Product Spec
-1. User Stories
-Required Must-have Stories
+**Optional Nice-to-have Stories**
 
-Record audio and see live transcription.
+- **Cloud sync** for cross-device note access.  
+- **Collaborative note editing/sharing**.  
+- **Tagging** and **categorizing notes**.  
+- **Voice commands** to control recording or summarization.  
+- **Offline dictionary** for word lookups.  
 
-Edit and save transcriptions to a list of notes.
+---
 
-View original notes in a Home Screen list.
+### **2. Screen Archetypes**
 
-Tap a note to open a detailed editable view.
+**Home Screen (List View)**  
+- Shows **original saved notes** in a list.  
+- Tap a note to open **details**.  
+- Access **Record** and **Scan** buttons from tab bar.  
 
-Summarize notes using AI.
+**Record Screen**  
+- User starts/stops **audio recording**.  
+- **Live transcription** appears as they speak.  
+- Option to **save transcription** to notes.  
 
-Translate notes into another language.
+**Note Detail Screen**  
+- Shows **full note text** in an **editable view**.  
+- **Summarize** button to generate **AI summary**.  
+- **Save Edit** button to store a **new version** under the original note.  
+- List of all **edits** below the original note.  
+- **Tap any word** to open a **definition popup** or panel with meaning, synonyms, and usage examples.  
 
-Scan printed or handwritten text via camera.
+**Summary Screen**  
+- Displays **AI-generated summary**.  
+- Option to **save summary** as a new note.  
 
-Tap a word in any note to view its definition in a popup.
+**Scan Screen**  
+- Uses **camera** to scan **printed or handwritten text**.  
+- Extracted text appears with options to **save** or **translate**.  
 
-Persist all notes locally.
+**Translate Screen**  
+- User selects a **target language** from a picker.  
+- **Translated text** replaces or is saved alongside original.  
 
-Optional Nice-to-have Stories
+---
 
-Cloud sync for cross-device access.
+### **3. Navigation**
 
-Collaborative editing/sharing.
+**Tab Navigation**  
+- **Home** – List of saved original notes.  
+- **Record** – Opens audio recorder & live transcription.  
+- **Scan** – Opens camera for text scanning.  
 
-Tagging and search.
+**Flow Navigation**  
+- **Home Screen** → **Note Detail Screen** (tap note)  
+- **Note Detail Screen** → **Summary Screen** (tap Summarize)  
+- **Note Detail Screen** → **Word Meaning Popup** (tap word)  
+- **Scan Screen** → **Translate Screen** (tap Translate)  
+- **Record Screen** → **Save to Home** (tap Save)  
 
-Offline dictionary for word meanings.
 
-2. Screen Archetypes
-Home Screen
+## **Tap-to-Define (How it works)**  
+- User taps a word in the Note Detail TextView  
+- App detects selected word and shows a popup definition (dictionary/lookup)  
+- Works for both original and edited notes  
 
-List of original saved notes.
+## **Schema**
+[This section will be completed in Unit 9]
 
-Tap a note → Note Detail Screen.
+### **Models**
 
-Record Screen
+**Transcription**
 
-Live speech-to-text transcription.
+| Property      | Type         | Description |
+|---------------|--------------|-------------|
+| id            | UUID         | Unique identifier for each transcription |
+| text          | String       | Main note text (original or edited) |
+| originalText  | String?      | Stores the unedited original note (optional) |
+| date          | Date         | Date and time the note was created |
+| edits         | [EditVersion]| List of all edits made to the original note |
+| type          | String       | Type of note (e.g., "original", "summary", "translation") |
 
-Save button to store transcription in Home.
+**EditVersion**
+
+| Property   | Type   | Description |
+|------------|--------|-------------|
+| text       | String | Edited text version |
+| timestamp  | Date   | When this edit was made |
+
+**SummaryEntry**
+
+| Property     | Type   | Description |
+|--------------|--------|-------------|
+| originalText | String | The text that was summarized |
+| summaryText  | String | The AI-generated summary |
+| summaryType  | String | Summary mode (bullet, action, tldr, tweet) |
+| timestamp    | Date   | When the summary was generated |
+
+---
+
+## **Networking**
+
+### **Home Screen**
+- **Load all notes** from local storage (`UserDefaults`)
+```swift
+let notes = TranscriptionStorage.loadTranscriptions()
+
+
+Speech-to-text using Apple’s Speech framework (SFSpeechRecognizer)
+
+No network request; runs locally.
 
 Note Detail Screen
+Summarize note with OpenAI API
 
-Editable text view of the note.
-
-Save Edit button to store changes as separate versions.
-
-Summarize button for AI-generated summaries.
-
-List of edits under original note.
-
-Tap any word for instant definition popup.
-
-Summary Screen
-
-Shows AI-generated summary.
-
-Save summary to Home.
-
+bash
+Copy
+Edit
+POST https://api.openai.com/v1/chat/completions
+Headers:
+  Authorization: Bearer OPENAI_API_KEY
+  Content-Type: application/json
+Body:
+{
+  "model": "gpt-3.5-turbo",
+  "messages": [
+    {"role": "system", "content": "You are a helpful assistant that summarizes text."},
+    {"role": "user", "content": "Summarize the following text:\n\nNOTE_TEXT"}
+  ],
+  "temperature": 0.7
+}
 Scan Screen
-
-Camera-based text scanning.
-
-Option to translate or save scanned text.
+OCR with Vision Framework (local, no API call)
 
 Translate Screen
+Translate text with OpenAI API
 
-Language picker for translation target.
+bash
+Copy
+Edit
+POST https://api.openai.com/v1/chat/completions
+Headers:
+  Authorization: Bearer OPENAI_API_KEY
+  Content-Type: application/json
+Body:
+{
+  "model": "gpt-3.5-turbo",
+  "messages": [
+    {"role": "system", "content": "You are a helpful assistant that translates text."},
+    {"role": "user", "content": "Translate the following text to LANGUAGE:\n\nNOTE_TEXT"}
+  ],
+  "temperature": 0.7
+}
+pgsql
+Copy
+Edit
 
-Save translation to Home.
-
-3. Navigation
-Tab Navigation
-
-Home – List of notes.
-
-Record – Audio recording & transcription.
-
-Scan – Camera OCR scanning.
-
-Flow Navigation
-
-Home → Note Detail Screen
-
-Note Detail → Summary Screen
-
-Note Detail → Word Meaning Popup
-
-Scan → Translate Screen
-
-Record → Save to Home
