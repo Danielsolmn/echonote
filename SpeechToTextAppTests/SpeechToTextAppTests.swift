@@ -1,14 +1,14 @@
 //
-//  SpeechToTextApp2Tests.swift
-//  SpeechToTextApp2Tests
+//  SpeechToTextAppTests.swift
+//  SpeechToTextAppTests
 //
-//  Created by Daniel Woldetsadik on 8/3/25.
+//  Created by Daniel Woldetsadik on 7/31/25.
 //
 
 import Testing
-@testable import SpeechToTextApp2
+@testable import SpeechToTextApp
 
-struct SpeechToTextApp2Tests {
+struct SpeechToTextAppTests {
 
     @Test func example() async throws {
         // Write your test here and use APIs like `#expect(...)` to check expected conditions.

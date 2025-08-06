@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  SpeechToTextApp2
+//  SpeechToTextApp
 //
-//  Created by Daniel Woldetsadik on 8/3/25.
+//  Created by Daniel Woldetsadik on 7/31/25.
 //
 
 import UIKit
@@ -14,8 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-    
-
         return true
     }
 

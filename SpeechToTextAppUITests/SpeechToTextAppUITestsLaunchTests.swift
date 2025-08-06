@@ -1,13 +1,13 @@
 //
-//  SpeechToTextApp2UITestsLaunchTests.swift
-//  SpeechToTextApp2UITests
+//  SpeechToTextAppUITestsLaunchTests.swift
+//  SpeechToTextAppUITests
 //
-//  Created by Daniel Woldetsadik on 8/3/25.
+//  Created by Daniel Woldetsadik on 7/31/25.
 //
 
 import XCTest
 
-final class SpeechToTextApp2UITestsLaunchTests: XCTestCase {
+final class SpeechToTextAppUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

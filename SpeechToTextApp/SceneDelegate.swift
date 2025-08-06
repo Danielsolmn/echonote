@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  SpeechToTextApp2
+//  SpeechToTextApp
 //
-//  Created by Daniel Woldetsadik on 8/3/25.
+//  Created by Daniel Woldetsadik on 7/31/25.
 //
 
 import UIKit
