@@ -11,27 +11,33 @@
 ---
 
 ## **Product Spec**
+## ✅ User Features
 
-### **1. User Stories**
+### Required (Must-have) Features
 
-**Required Must-have Stories**
+- [ x] **User can record audio** and see **live transcription**.
+- [ x] **User can edit** and **save** the transcription to a **list of notes**.
+- [ x] **User can tap a note** to open a **detailed view**.
+- [x ] **User can generate AI summaries** of a note.
+- [x ] **User can scan text** using the **camera** and save it as a note.
+- [x ] **User can translate** notes into another language.
+- [ x] **User can tap a word** to see its **definition** (via popup or bottom sheet).
+- [x ] **All saved notes** appear in the **home screen table view**.
+- [x ] **Each edit has a timestamp**, allowing users to track when changes were made.
+- [ ] **User can tap a button to listen to the text** using **text-to-speech** (playback screen).
 
-- **User can record audio** and see **live transcription**.  
-- **User can edit** and **save** the transcription to a **list of notes**.  
-- **User can tap a note** to open a **detailed view**.  
-- **User can generate AI summaries** of a note.  
-- **User can scan text** using the **camera** and save it.  
-- **User can translate notes** into another language.  
-- **User can tap a word** in any note to see its **meaning/definition** in a popup or bottom sheet.  
-- **All saved notes** appear in the home screen’s **table view**.  
+---
 
-**Optional Nice-to-have Stories**
+### Optional (Nice-to-have) Features
 
-- **Cloud sync** for cross-device note access.  
-- **Collaborative note editing/sharing**.  
-- **Tagging** and **categorizing notes**.  
-- **Voice commands** to control recording or summarization.  
-- **Offline dictionary** for word lookups.  
+- [ ] **Cloud sync** for cross-device note access.
+- [ ] **Collaborative note editing/sharing**.
+- [ ] **Tagging** and **categorizing notes** for better organization.
+- [ ] **Voice commands** to control recording or trigger summarization.
+- [ ] **Export note as PDF** or share with other apps.
+- [ ] **Search bar** to filter notes by keyword.
+- [ ] **AI-generated flashcards** from transcriptions.
+- [ ] **Settings screen** to control theme, language, or default behaviors.
 
 ---
 
@@ -122,54 +128,103 @@
 
 ---
 
-## **Networking**
+## 🌐 Networking
 
-### **Home Screen**
-- **Load all notes** from local storage (`UserDefaults`)
+This app uses a combination of **local processing** and **OpenAI API calls** for its core features.
+
+---
+
+### 🏠 Home Screen
+- **Loads all saved notes** from local storage using `UserDefaults`:
 ```swift
 let notes = TranscriptionStorage.loadTranscriptions()
+```
+- ✅ **No networking involved**
 
+---
 
-Speech-to-text using Apple’s Speech framework (SFSpeechRecognizer)
+### 🗣️ Speech-to-Text (Recording)
+- Powered by **Apple’s `Speech` framework** (`SFSpeechRecognizer`)
+- ✅ Runs **entirely on-device** — **no network request**
 
-No network request; runs locally.
+---
 
-Note Detail Screen
-Summarize note with OpenAI API
+### 📄 Note Detail Screen – Summarize Note
+- Sends note text to **OpenAI's Chat API** for summarization
 
-
+**API Endpoint:**
+```
 POST https://api.openai.com/v1/chat/completions
-Headers:
-  Authorization: Bearer OPENAI_API_KEY
-  Content-Type: application/json
-Body:
+```
+
+**Headers:**
+```
+Authorization: Bearer OPENAI_API_KEY  
+Content-Type: application/json
+```
+
+**Body:**
+```json
 {
   "model": "gpt-3.5-turbo",
   "messages": [
-    {"role": "system", "content": "You are a helpful assistant that summarizes text."},
-    {"role": "user", "content": "Summarize the following text:\n\nNOTE_TEXT"}
+    {
+      "role": "system",
+      "content": "You are a helpful assistant that summarizes text."
+    },
+    {
+      "role": "user",
+      "content": "Summarize the following text:\n\nNOTE_TEXT"
+    }
   ],
   "temperature": 0.7
 }
-Scan Screen
-OCR with Vision Framework (local, no API call)
+```
 
-Translate Screen
-Translate text with OpenAI API
+---
 
+### 📷 Scan Screen (OCR)
+- Uses **Apple’s Vision framework** for **text recognition**
+- ✅ Fully **local** — no networking required
 
+---
+
+### 🌍 Translate Screen
+- Sends note text to **OpenAI's Chat API** for translation
+
+**API Endpoint:**
+```
 POST https://api.openai.com/v1/chat/completions
-Headers:
-  Authorization: Bearer OPENAI_API_KEY
-  Content-Type: application/json
-Body:
+```
+
+**Headers:**
+```
+Authorization: Bearer OPENAI_API_KEY  
+Content-Type: application/json
+```
+
+**Body:**
+```json
 {
   "model": "gpt-3.5-turbo",
   "messages": [
-    {"role": "system", "content": "You are a helpful assistant that translates text."},
-    {"role": "user", "content": "Translate the following text to LANGUAGE:\n\nNOTE_TEXT"}
+    {
+      "role": "system",
+      "content": "You are a helpful assistant that translates text."
+    },
+    {
+      "role": "user",
+      "content": "Translate the following text to LANGUAGE:\n\nNOTE_TEXT"
+    }
   ],
   "temperature": 0.7
 }
+```
+
+---
+
+### 📚 Dictionary / Word Definition Popup
+- Planned feature: use **offline dictionary** for tapped word definitions
+- Option to integrate external API for live definitions in the future
 
 
