@@ -105,7 +105,20 @@
 - Works for both original and edited notes  
 
 
+## 🖼️ Wireframing
 
+Below is the hand-drawn wireframe for **EconoNote**, showing the key screens and navigation flow of the app.
+
+📄 [View Wireframe Sketch (PDF)](Wireframing.pdf)
+
+This sketch includes:
+- Home screen with saved notes
+- Record/transcribe screen
+- Note detail screen
+- Scan screen (OCR)
+- Summary and Translate screens
+- Playback screen (text-to-speech)
+- Tab navigation and screen transitions
 
 ### **Models**
 
