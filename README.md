@@ -9,6 +9,16 @@
 **EchoNote** is an **AI-powered productivity app** that transforms spoken words into organized, editable, and actionable notes. Users can **record speech**, instantly **transcribe it to text**, **edit** the transcription, **summarize** it with **AI**, **translate** it into different languages, **scan text** using their **camera**, or **tap on individual words** to instantly see their meanings and definitions. All **notes and edits** are stored for easy access, search, and sharing, making it perfect for **students, professionals**, and **anyone** who needs clear and concise records of conversations, lectures, or meetings.
 
 ---
+## 🎥 Video Walkthrough
+
+<div>
+  <a href="https://www.loom.com/share/adf0e4e71b604f118ad25942f6c55b31">
+   
+  </a>
+  <a href="https://www.loom.com/share/adf0e4e71b604f118ad25942f6c55b31">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/adf0e4e71b604f118ad25942f6c55b31-4d28a63d5f8b58fd-full-play.gif" alt="EconoNote Walkthrough">
+  </a>
+</div>
 
 ## **Product Spec**
 ## ✅ User Features
@@ -94,8 +104,8 @@
 - App detects selected word and shows a popup definition (dictionary/lookup)  
 - Works for both original and edited notes  
 
-## **Schema**
-[This section will be completed in Unit 9]
+
+
 
 ### **Models**
 
