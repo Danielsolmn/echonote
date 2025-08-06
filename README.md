@@ -137,9 +137,7 @@ No network request; runs locally.
 Note Detail Screen
 Summarize note with OpenAI API
 
-bash
-Copy
-Edit
+
 POST https://api.openai.com/v1/chat/completions
 Headers:
   Authorization: Bearer OPENAI_API_KEY
@@ -159,9 +157,7 @@ OCR with Vision Framework (local, no API call)
 Translate Screen
 Translate text with OpenAI API
 
-bash
-Copy
-Edit
+
 POST https://api.openai.com/v1/chat/completions
 Headers:
   Authorization: Bearer OPENAI_API_KEY
@@ -175,7 +171,5 @@ Body:
   ],
   "temperature": 0.7
 }
-pgsql
-Copy
-Edit
+
 
