@@ -9,6 +9,16 @@
 **EchoNote** is an **AI-powered productivity app** that transforms spoken words into organized, editable, and actionable notes. Users can **record speech**, instantly **transcribe it to text**, **edit** the transcription, **summarize** it with **AI**, **translate** it into different languages, **scan text** using their **camera**, or **tap on individual words** to instantly see their meanings and definitions. All **notes and edits** are stored for easy access, search, and sharing, making it perfect for **students, professionals**, and **anyone** who needs clear and concise records of conversations, lectures, or meetings.
 
 ---
+## 📱 App Preview
+
+<p align="center">
+  <img src="assets/preview/home.png" width="220" alt="Home Screen">
+  <img src="assets/preview/record.png" width="220" alt="Record Screen">
+  <img src="assets/preview/scan.png" width="220" alt="Scan Screen">
+  <img src="assets/preview/edit.png" width="220" alt="Edit Screen">
+</p>
+ 
+ 
 ## 🎥 Video Walkthrough
 
 <div>
