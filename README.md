@@ -118,7 +118,8 @@
 
 Below is the wireframe for **EconoNote**, showing the key screens and navigation flow of the app.
 
-📄 [View Wireframe Sketch (png)(Wireframing.png)  
+![View Wireframe Sketch](Wireframing.png)
+
 =======
 
 This sketch includes:
