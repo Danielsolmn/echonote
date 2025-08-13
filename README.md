@@ -12,10 +12,10 @@
 ## 📱 App Preview
 
 <p align="center">
-  <img src="assets/preview/home.png" width="220" alt="Home Screen">
-  <img src="assets/preview/record.png" width="220" alt="Record Screen">
-  <img src="assets/preview/scan.png" width="220" alt="Scan Screen">
-  <img src="assets/preview/edit.png" width="220" alt="Edit Screen">
+  <img src="assets/preview/Home.png" width="220" alt="Home Screen">
+  <img src="assets/preview/Record.png" width="220" alt="Record Screen">
+  <img src="assets/preview/Scan.png" width="220" alt="Scan Screen">
+  <img src="assets/preview/Edit.png" width="220" alt="Edit Screen">
 </p>
  
  
