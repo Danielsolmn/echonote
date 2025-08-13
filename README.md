@@ -109,7 +109,7 @@
 
 Below is the hand-drawn wireframe for **EconoNote**, showing the key screens and navigation flow of the app.
 
-📄 [View Wireframe Sketch (PDF)](Wireframing.png)  
+📄 [View Wireframe Sketch(Png)](Wireframing.png)  
 
 This sketch includes:
 - Home screen with saved notes
