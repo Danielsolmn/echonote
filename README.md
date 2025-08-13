@@ -116,9 +116,8 @@
 
 ## 🖼️ Wireframing
 
-Below is the hand-drawn wireframe for **EconoNote**, showing the key screens and navigation flow of the app.
+Below is the wireframe for **EconoNote**, showing the key screens and navigation flow of the app.
 
-<<<<<<< HEAD
 📄 [View Wireframe Sketch (png)(Wireframing.png)  
 =======
 
