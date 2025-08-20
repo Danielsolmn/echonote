@@ -21,13 +21,12 @@
 ## 🎥 Video Walkthrough
 
 <div>
-  <a href="https://www.loom.com/share/adf0e4e71b604f118ad25942f6c55b31">
-   
-  </a>
-  <a href="https://www.loom.com/share/adf0e4e71b604f118ad25942f6c55b31">
-    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/adf0e4e71b604f118ad25942f6c55b31-4d28a63d5f8b58fd-full-play.gif" alt="EconoNote Walkthrough">
-  </a>
-</div>
+    <a href="https://www.loom.com/share/34f4987657544d29913a17fe41753d0f">
+    </a>
+    <a href="https://www.loom.com/share/34f4987657544d29913a17fe41753d0f">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/34f4987657544d29913a17fe41753d0f-b3bc77d838bba89a-full-play.gif">
+    </a>
+  </div>
 
 ## **Product Spec**
 ## ✅ User Features
@@ -43,7 +42,6 @@
 - [ x] **User can tap a word** to see its **definition** (via popup or bottom sheet).
 - [x ] **All saved notes** appear in the **home screen table view**.
 - [x ] **Each edit has a timestamp**, allowing users to track when changes were made.
-- [ ] **User can tap a button to listen to the text** using **text-to-speech** (playback screen).
 
 ---
 
